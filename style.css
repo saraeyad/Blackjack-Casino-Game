@@ -1,0 +1,227 @@
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+}
+
+.game-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 800px;
+}
+
+h1 {
+  text-align: center;
+  color: #fdbb2d;
+  margin-top: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  color: #fdbb2d;
+  margin-bottom: 10px;
+}
+
+.game-status {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.dealer-area,
+.player-area {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-height: 120px;
+}
+
+.card {
+  width: 80px;
+  height: 120px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.card.red {
+  color: red;
+}
+
+.card-value {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 1.2rem;
+}
+
+.card-suit {
+  font-size: 2rem;
+}
+
+.betting-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.balance-display {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.bet-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#bet-amount {
+  width: 80px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+}
+
+.game-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#deal-button {
+  background-color: #fdbb2d;
+  color: black;
+}
+
+#hit-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+#stand-button {
+  background-color: #f44336;
+  color: white;
+}
+
+#reset-button {
+  background-color: #2196f3;
+  color: white;
+}
+
+.game-rules {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.game-rules h3 {
+  margin-top: 0;
+  color: #fdbb2d;
+}
+
+.game-rules p {
+  margin-bottom: 0;
+}
+
+/* Hidden card style */
+.card.hidden {
+  background-image: linear-gradient(45deg, #1a2a6c, #b21f1f);
+  color: transparent;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .game-area {
+    flex-direction: row;
+  }
+
+  .dealer-area,
+  .player-area {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-container {
+    padding: 10px;
+  }
+
+  .card {
+    width: 60px;
+    height: 90px;
+  }
+
+  .game-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    width: 100%;
+    max-width: 200px;
+  }
+}

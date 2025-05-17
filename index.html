@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blackjack Casino Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/blackjack.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Blackjack Casino</h1>
+
+      <div class="game-status">
+        <div id="message">
+          Welcome to Blackjack! Place your bet and press DEAL to start.
+        </div>
+      </div>
+
+      <div class="game-area">
+        <div class="dealer-area">
+          <h2>Dealer: <span id="dealer-sum">0</span></h2>
+          <div id="dealer-cards" class="cards"></div>
+        </div>
+
+        <div class="player-area">
+          <h2>Player: <span id="player-sum">0</span></h2>
+          <div id="player-cards" class="cards"></div>
+        </div>
+      </div>
+
+      <div class="betting-area">
+        <div class="balance-display">
+          <h3>Balance: $<span id="balance">1000</span></h3>
+        </div>
+        <div class="bet-controls">
+          <label for="bet-amount">Bet Amount: $</label>
+          <input
+            type="number"
+            id="bet-amount"
+            min="10"
+            max="1000"
+            step="10"
+            value="50"
+          />
+        </div>
+      </div>
+
+      <div class="game-controls">
+        <button id="deal-button">DEAL</button>
+        <button id="hit-button" disabled>HIT</button>
+        <button id="stand-button" disabled>STAND</button>
+        <button id="reset-button">NEW GAME</button>
+      </div>
+
+      <div class="game-rules">
+        <h3>Rules:</h3>
+        <p>
+          Try to get as close to 21 without going over. Dealer hits until 17.
+          Blackjack pays 3:2.
+        </p>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
